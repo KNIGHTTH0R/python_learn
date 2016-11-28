@@ -12,12 +12,9 @@ print("Is (0.1 + 0.1 + 0.1 == 0.3) ?")
 
 print(0.1 + 0.1 + 0.1 == 0.3)
 
-def safe_add(a,b):
-    return round(a + b)
-
 print("Is (0.1 + 0.1 + 0.1 == 0.3) ?")
 
-print(round(0.111111 + 0.111111 + 0.111111, 5) == round(0.333333, 5))
+print(round(0.1 + 0.1 + 0.1, 5) == round(0.3, 5))
 
 print(round(10.33333, 3))
 
@@ -47,3 +44,5 @@ print(num1 - num2)
 print(num1*10)
 
 print(num1/num2)
+
+print(type(num1))

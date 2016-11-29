@@ -23,6 +23,5 @@ list4=[8,9,10]
 for num in list4:
     print(num)
 
-for i in range(len(list4)):
-    print('Index : ',i,' ,value : ',list4[i])
-
+for ix, num in enumerate(list4):
+    print('Index : {} ,value : {}'.format(ix, num))

@@ -28,6 +28,8 @@ def divide(a, b):
 
 divide(10,5)
 print()
+divide(10,0)
+print()
 
 def print_star(func):
     def inner(val):

@@ -27,7 +27,7 @@ compress_queue = Queue()
 
 output_names = [{'v1.mp4' : 'v11.mp4'},{'v2.mp4' : 'v22.mp4'}]
 
-for i in range(1):
+for i in range(2):
     t = threading.Thread(target=process_queue)
     t.daemon = True
     t.start()

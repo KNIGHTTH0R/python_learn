@@ -1,18 +1,20 @@
 import threading
 from queue import Queue
 import time
-import zipfile
-import random
 
 list_lock = threading.Lock()
 
-def find_rand(rand_num):
-    while True:
-        if is_prime(rand_num):
-            with list_lock:
-                prime_list.append(rand_num)
-            break
-        rand_num += 1
+def find_rand(num):
+    sum_of_primes = 0
+
+    ix = 2
+
+    while ix <= num:
+        if is_prime(ix):
+            sum_of_primes += ix
+        ix += 1
+
+    sum_primes_list.append(sum_of_primes)
 
 def is_prime(num):
     if num <= 1:
@@ -36,10 +38,10 @@ def process_queue():
 
 min_nums = Queue()
 
-rand_list = [49674923266195, 64638487475080, 1161019450999, 11158231750939, 75626194509752]
-prime_list = list()
+rand_list = [1000000, 2000000, 3000000]
+sum_primes_list = list()
 
-for i in range(4):
+for i in range(2):
     t = threading.Thread(target=process_queue)
     t.daemon = True
     t.start()
@@ -51,7 +53,9 @@ for rand_num in rand_list:
 
 min_nums.join()
 
-prime_list.sort()
-print(prime_list)
+end_time = time.time()
 
-print("Execution time = {0:.5f}".format(time.time() - start))
+sum_primes_list.sort()
+print(sum_primes_list)
+
+print("Execution time = {0:.5f}".format(end_time - start))

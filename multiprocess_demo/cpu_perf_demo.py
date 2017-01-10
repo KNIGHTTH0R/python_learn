@@ -1,7 +1,7 @@
 from multiprocessing import Pool
 import time
 
-def gen_prime(num):
+def sum_prime(num):
     
     sum_of_primes = 0
 
@@ -30,6 +30,6 @@ def is_prime(num):
 
 if __name__ == '__main__':
     start = time.time()
-    with Pool(2) as p:
-        print(p.map(gen_prime, [1000000, 2000000, 3000000]))
+    with Pool(1) as p:
+        print(p.map(sum_prime, [1000000, 2000000, 3000000]))
     print("Time taken = {0:.5f}".format(time.time() - start))
